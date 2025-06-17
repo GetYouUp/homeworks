@@ -1,11 +1,10 @@
 
-
 ## 🟢 Easy-Level Tasks (10)
 
 
 1. Write a query to select the top 5 employees from the Employees table.
 
-select top 5 *
+select top 5 *      
 from  employees
 order by salary desc;
 
@@ -76,9 +75,9 @@ order by price desc;
 
 12. Use COALESCE to return the first non-NULL value from FirstName or LastName in the Employees table.
 
-select * from employees;
 
-
+SELECT  COALESCE(firstname, lastname) as name
+from employees;
 
 
 13. Write a query that selects distinct Category and Price from the Products table.
@@ -101,7 +100,6 @@ fetch next 10 rows only;
 
 16. Write a query to display all products with Price <= 1000 and Stock > 50, sorted by Stock in ascending order.
 
-select * from products;
 
 select productname, price, stockquantity from products
 where price<=1000 and stockquantity>50
@@ -123,7 +121,6 @@ where departmentname in('hr', 'it', 'finance');
 
 19. Use ORDER BY to display a list of customers ordered by City in ascending and PostalCode in descending order.Use customers table
 
-select * from sales;
 
 select customerid, city, postalcode from customers
 order by city asc, postalcode desc;
@@ -136,7 +133,6 @@ ________________________________________
 
 20. Write a query that selects the top 5 products with the highest sales, using TOP(5) and ordered by SalesAmount DESC.
 
-select * from  sales
 
 select top 5* from sales
 order by saleamount desc;
@@ -144,7 +140,6 @@ order by saleamount desc;
 
 21. Combine FirstName and LastName into one column named FullName in the Employees table. (only in select statement)
 
-select * from employees
 
 select firstname+''+ lastname as fullname
 from employees;
@@ -158,7 +153,6 @@ where price>50;
 
 	23. Write a query that selects products whose Price is less than 10% of the average price in the Products table. (Do some research on how to find average price of all products)
 
-	select * from products;
 
 	select productname,price from products
 	where price<(select avg(price)*0.1 as 'average price' from products);
@@ -184,3 +178,4 @@ this question is not clear........
 
 27. Write a query that filters the Orders table for orders placed in the last 180 days using BETWEEN and LATEST_DATE in the table.
 (Search how to get the current date and latest date)
+	
